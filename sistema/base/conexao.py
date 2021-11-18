@@ -19,7 +19,8 @@ class Conexao:
             self.__conexao = pymysql.connect(host=self.__host,
                                              user=self.__user,
                                              password=self.__password,
-                                             database=self.__database)
+                                             database=self.__database,
+                                             autocommit=True)
             return True
         except:
             print("Falha ao conectar!")
