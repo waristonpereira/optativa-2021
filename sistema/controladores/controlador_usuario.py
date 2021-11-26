@@ -33,6 +33,10 @@ class ControladorUsuario():
         todos_usuarios = Usuario()
         return todos_usuarios.obter_todos()
 
+    def buscar_usuario_por_id(self, id):
+        usuario = Usuario()
+        return usuario.obter_por_id(id)
+
     def verificar_usuario_senha(self, usuario, senha):
         busca_usuarios = Usuario()
         retorno = busca_usuarios.obter_por_nome(usuario)
@@ -40,7 +44,7 @@ class ControladorUsuario():
             print("Usuário/Senha Inválidos!")
             return False
         else:
-            senha_no_banco = retorno[2]
+            senha_no_banco = retorno["senha"]
             if senha_no_banco == senha:
                 print("Usuário/Senha Válidos!")
                 return True

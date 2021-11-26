@@ -20,7 +20,8 @@ class Conexao:
                                              user=self.__user,
                                              password=self.__password,
                                              database=self.__database,
-                                             autocommit=True)
+                                             autocommit=True,
+                                             cursorclass=pymysql.cursors.DictCursor)
             return True
         except:
             print("Falha ao conectar!")

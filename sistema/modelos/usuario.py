@@ -10,8 +10,8 @@ class Usuario(Modelo):
         if id:
             dado = self.obter_por_id(id)
             if dado:
-                self.usuario = dado[1];
-                self.senha = dado[2];
+                self.usuario = dado["usuario"];
+                self.senha = dado["senha"];
             else:
                 self.id = None;
                 self.usuario = None;
